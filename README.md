@@ -22,12 +22,12 @@ Når verktøyene over er klare:
 1. **Klone repoet**: Last ned/kopier dette repoet til din maskin ([link](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)). Hvis du ikke har push-tilgang, kan du _forke_ repoet på GitHub og deretter klone din egen fork.
 2. **Opprett en branch**: Lag en ny branch for arbeidet ditt, med et fornuftig navn. For eksempel, `assignment-<ditt-navn>` (ingen mellomrom eller norske tegn). Pass på at du **jobber på din egen branch** og ikke på `main`.
 3. **Åpne prosjektet**: Åpne mappen i VS Code eller ditt IDE. Det kan være lurt å installere anbefalte utvidelser som Prettier (for kodeformatering).
-4. **Arbeidsflyt**: Jobb deg gjennom oppgavene i rekkefølge (HTML → CSS → JavaScript → Verktøy). For hver seksjon:
+4. **Arbeidsflyt**: Jobb deg gjennom oppgavene i rekkefølge ([HTML](./1_HTML/) → [CSS](./2_CSS/) → [JavaScript](./3_Javascript/) → [Verktøy](./4_Tooling/)). For hver seksjon:
    - Les emnets `README.md` som inneholder forklaringer og eksempler.
    - Utfør oppgavene beskrevet i emnets `ASSIGNMENT.md`
    - Commiter endringer ofte (minst én commit per oppgave eller deloppgave). Skriv meningsfulle commit-meldinger (på engelsk, f.eks. `"Add semantic HTML structure"`).
    - Push branchen din til GitHub jevnlig (`git push`).
-5. **Finale-oppgave**: Når du har fullført alle modulene, gjennomfør den avsluttende **Oppgave** (beskrevet i `CHALLENGE.md`). Sett av 1–3 timer i én økt til denne, som om det var en mini-eksamen.
+5. **Finale-oppgave**: Når du har fullført alle modulene, gjennomfør den avsluttende **Oppgave** (beskrevet i [CHALLENGE.md](./CHALLENGE/README.md)). Sett av 1–3 timer i én økt til denne, som om det var en mini-eksamen.
 6. **Levering (Pull Request)**: Når du er ferdig, åpner du en Pull Request (PR) fra din branch inn til hovedrepoet (branch `main`). Vi har lagt ved en PR-mal som vil hjelpe deg å oppsummere arbeidet ditt – inkluder bl.a. lenker til skjermbilder/konsoll-output som bevis, og svar på refleksjonsspørsmål.
 7. **Tilbakemelding**: Veileder vil se gjennom PR-en din. Målet er å bekrefte at du har fått med deg det viktigste. Om noe mangler vil vi be deg om å gjøre utbedringer.
 

@@ -53,9 +53,8 @@ Dette repoet inneholder alt du trenger av oppgavebeskrivelser og dokumentasjon f
 - **CSS/** – Grunnleggende CSS (box-modellen, layout med Flexbox/Grid, responsivt design, komponentvennlige CSS-vaner)
 - **JavaScript/** – Grunnleggende moderne JavaScript (ES6+ syntaks, arrays & objekter, destructuring, spredningsoperator, array-metoder, moduler, DOM-manipulasjon, events, async/await, fetch API, JSON)
 - **Tooling/** – Verktøy og arbeidsflyt (VS Code, DevTools debugging, npm scripts, kjøre en dev-server med Vite, Prettier-formattering, Git grunnprinsipper)
-- **Final-Challenge.md** – Spesifikasjon for avsluttende oppgave ("React/Next Readiness Challenge") med krav og vurderingskriterier.
-- **React-Next-Readiness-Checklist.md** – Sjekkliste som viser hvordan ferdighetene fra hver modul kommer til nytte i React/Next.js. Bruk denne for å forstå _hvorfor_ vi gjør alt dette.
-- **Review-Session-Agenda.md** – Agenda for den avsluttende fellessesjonen (slutten av uka) – gir en pekepinn på hva vi vil fokusere på (vanlige hindringer og det å lese kode).
+- **CHALLENGE.md** – Spesifikasjon for avsluttende oppgave med krav og vurderingskriterier.
+- **CHECKLIST.md** – Sjekkliste som viser hvordan ferdighetene fra hver modul kommer til nytte i React/Next.js. Bruk denne for å forstå _hvorfor_ vi gjør alt dette.
 - **.github/** – Inneholder maler for Pull Request og Issues. Pull request-malen hjelper deg å oppsummere arbeidet ved innlevering. Issue-malene kan brukes hvis du trenger å stille et spørsmål eller rapportere en teknisk bug underveis.
 
 ## Vurdering og videre oppfølging

@@ -55,7 +55,7 @@ Dette repoet inneholder alt du trenger av oppgavebeskrivelser og dokumentasjon f
 - **Tooling/** – Verktøy og arbeidsflyt (VS Code, DevTools debugging, npm scripts, kjøre en dev-server med Vite, Prettier-formattering, Git grunnprinsipper)
 - **CHALLENGE.md** – Spesifikasjon for avsluttende oppgave med krav og vurderingskriterier.
 - **CHECKLIST.md** – Sjekkliste som viser hvordan ferdighetene fra hver modul kommer til nytte i React/Next.js. Bruk denne for å forstå _hvorfor_ vi gjør alt dette.
-- **.github/** – Inneholder maler for Pull Request og Issues. Pull request-malen hjelper deg å oppsummere arbeidet ved innlevering. Issue-malene kan brukes hvis du trenger å stille et spørsmål eller rapportere en teknisk bug underveis.
+- **.github/** – Inneholder maler for Pull Request og Issues. Pull request-malen hjelper deg å oppsummere arbeidet ved innlevering. Issue-malene kan brukes hvis du trenger å stille et spørsmål eller rapportere en teknisk bug underveis. Du trenger ikke å gjøre noe med filene i denne mappen, de blir brukt automatisk når issues eller pull-requests blir opprettet på Github.
 
 ## Vurdering og videre oppfølging
 

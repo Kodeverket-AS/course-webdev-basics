@@ -15,9 +15,7 @@ HTML kan bety flere forskjellige ting avhengig av hvem du spør, det vi skal læ
   - [Nesting](#nesting)
   - [Attributter](#attributter)
 - [Skjemaer](#skjemaer-forms)
-- [Events](#events)
 - [Tilgjengelighet](#tilgjengelighet-accessibility)
-- [Feilsøking](#feilsøking)
 
 ## Mål
 
@@ -219,10 +217,6 @@ Her har vi et tekstfelt, et tekstområde (flere linjer) og en send-knapp. Attrib
 
 Som webutvikler vil du ofte bruke JavaScript for å kontrollere skjema-oppførsel (validere input, sende data via API, osv.). Men det er lurt å definere skjemaet korrekt i HTML først, slik at du får gratis funksjonalitet (f.eks. innebygd e-postvalidering med `type="email"` og `required`).
 
-## Events
-
-https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events
-
 ## Tilgjengelighet (Accessibility)
 
 "Tilgjengelighet" handler om å gjøre nettsider brukbare for alle mennesker, inkludert de med nedsatt syn, hørsel eller motorikk. Mange tiltak for tilgjengelighet er en del av god HTML-skikk, for eksempel:
@@ -247,10 +241,6 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events
 - **Generelt:** Følg standard HTML-praksis: bruk riktige elementer til riktig innhold. Det som er semantisk riktig, er som oftest også mer tilgjengelig. Unngå ting som blinkende innhold, og sørg for god fargekontrast og lesbar tekst (CSS-relatert, men verdt å nevne).
 
 Tilgjengelighetsfeltet er stort, men du trenger ikke kunne alt nå. Tenk bare over at koden din skal kunne leses av noen som ikke ser designet. En fin test er "egenlesing": les HTML-koden din høyt og se om strukturen og innholdet gir mening.
-
-## Feilsøking
-
-**Tips:** Sørg alltid for at HTML-strukturen din er korrekt nestet og følger en logisk struktur. Start HTML-filen med `<!DOCTYPE html>` og `<html lang="no">` for å definere dokumentspråk. I `<head>`-delen angir du metadata og `<title>`. I `<body>` plasserer du det synlige innholdet med semantiske elementer.
 
 ## Hva skal jeg gjøre nå?
 

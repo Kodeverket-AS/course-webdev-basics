@@ -127,7 +127,21 @@ Du kan lese mer om hver kategori, og alle HTML elementer som tilhører den, ved 
 
 ### Nesting
 
-Elementer som tilhører flow,
+Nesting er bare navnet vi bruker for å definere relasjoner mellom elementer som blir brukt inni hverandre. Det er veldig viktig å ha nesting og posisjonering i tankene når vi skriver HTML, eller så kan styling med CSS bli veldig vanskelig. Sammen med _nesting/nested_ vill du også kunne høre følgende begrep; _parent_, _child/children_ og _sibling(s)_
+
+```html
+<section>
+  <h1>Tittel</h1>
+  <p>Litt tekst</p>
+</section>
+```
+
+I eksempelet over kan du observere følgende:
+
+- `<h1>` og `<p>` er **nested** inni `<section>`
+- `<h1>` og `<p>` er **children** av `<section>`
+- `<section>` er **parent** til `<h1>` og `<p>`
+- i tillegg er `<h1>` og `<p>` er **siblings**
 
 ### Attributter
 

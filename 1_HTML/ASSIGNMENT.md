@@ -42,12 +42,13 @@ For å betrakte oppgaven som _bestått_ skal følgende minimum være oppfylt:
 
 ## Refleksjon
 
-Tenk over følgende utsagn for å vurdere om du har forstått emnene vi har gått igjennom i HTML, hvis du ikke kan svaret på spørsmålet eller ikke klarer å forklare det skikkelig, bør du repitere emnet.
+Tenk over følgende utsagn for å vurdere om du har forstått det vi har gått igjennom. Hvis du ikke kan svaret på spørsmålet eller ikke klarer å forklare det skikkelig, bør du repitere emnet.
 
 1. Hva står `DOM` for og hva er det?
 2. Hva er de vigtigste delene av en `DOM` tree som må være inkludert for at en HTML fil skal fungere?
 3. Hva er et HTML element, og har du noen eksempler på elementer?
 4. Hva er en HTML attribut, og har du noen eksempler på attributter og hvordan de brukes?
-5. Hva er hovedforskjellen mellom `id` og `class` attributene og når vill du bruke dem?
-6. Har rekkefølgen på elementer i HTML koden noe å si?
-7. Når du beskriver HTML kode, brukes vi ofte begrepene child og parent, hva mener vi her?
+5. Hva er en data attribut?
+6. Hva er hovedforskjellen mellom `id` og `class` attributene og når vill du bruke dem?
+7. Har rekkefølgen på elementer i HTML koden noe å si?
+8. Når vi beskriver HTML kode, brukes vi ofte begrepene child, parent og siblings, hva mener vi her?

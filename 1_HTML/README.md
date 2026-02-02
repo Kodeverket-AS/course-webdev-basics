@@ -8,6 +8,7 @@ HTML kan bety flere forskjellige ting avhengig av hvem du spør, det vi skal læ
 > Klikk på en link for å hoppe rett til emnet
 
 - [Hva er HTML](#hva-er-html)
+  - [HTML elementer](#html-elementer)
   - [Semantisk HTML](#semantisk-html)
   - [Kategorier](#kategorier)
   - [Nesting](#nesting)
@@ -45,12 +46,17 @@ HTML (HyperText Markup Language) er et markeringsspråk som forteller nettlesere
 </html>
 ```
 
+Elements and tags are not the same things. Tags begin or end an element in source code, whereas elements are part of the DOM, the document model for displaying the page in the browser.
+
+### HTML elementer
+HTML består av [elementer](https://developer.mozilla.org/en-US/docs/Glossary/Element) (som [tags](https://developer.mozilla.org/en-US/docs/Glossary/Tag)) som forteller noe om innholdet.
+
 ### Semantisk HTML
 
 > [!NOTE]  
-> Liste over alle HTML tags er tilgjengelig på [mdn](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)
+> Liste over alle HTML elementer er tilgjengelig på [mdn](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)
 
-HTML består av [elementer](https://developer.mozilla.org/en-US/docs/Glossary/Element) ([tagger](https://developer.mozilla.org/en-US/docs/Glossary/Tag)) som forteller noe om innholdet. "Semantisk HTML" betyr å bruke elementer som har riktig _betydning_ for innholdet du skriver. Det gjør sidene dine lettere å forstå for både nettlesere, søkemotorer og hjelpemidler som skjermlesere.
+[Semantisk HTML](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html) betyr å bruke elementer som har riktig _betydning_ for innholdet du skriver. Det gjør sidene dine lettere å forstå for både nettlesere, søkemotorer og hjelpemidler som skjermlesere.
 
 Vanlige semantiske elementer inkluderer for eksempel:
 
@@ -108,6 +114,8 @@ Du kan lese mer om hver kategori, og alle HTML elementer som tilhører den, ved 
 - [Embedded content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#embedded_content)
 
 ### Nesting
+
+Elementer som tilhører flow,
 
 ### Attributter
 
@@ -196,3 +204,4 @@ Nå som du har en grunnleggende forståelse av HTML, er det på tide å omsette 
 Hvis du ønsker å lese mer om HTML så kan du sjekke ut de følgende ressursene
 
 - MDN guides ([mdn](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides))
+- HTML cheatsheet ([mdn](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Cheatsheet))

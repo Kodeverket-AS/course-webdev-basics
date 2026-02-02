@@ -8,12 +8,12 @@ HTML kan bety flere forskjellige ting avhengig av hvem du spør, det vi skal læ
 > Klikk på en link for å hoppe rett til emnet
 
 - [Hva er HTML](#hva-er-html)
+  - [Domain object model (DOM)](#domain-object-model-dom)
   - [HTML elementer](#html-elementer)
   - [Semantisk HTML](#semantisk-html)
   - [Kategorier](#kategorier)
   - [Nesting](#nesting)
   - [Attributter](#attributter)
-- [Domain object model (DOM)](#domain-object-model-dom)
 - [Linking](#linking)
 - [Tabeller](#tabeller)
 - [Skjemaer](#skjemaer-forms)
@@ -34,7 +34,7 @@ HTML kan bety flere forskjellige ting avhengig av hvem du spør, det vi skal læ
 > [!NOTE]  
 > Les mer utfyllende forklaring på [mdn](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#what_is_html)
 
-HTML (HyperText Markup Language) er et markeringsspråk som forteller nettlesere hvordan de skal strukturere nettsidene du besøker, og består av en serie elementer som du bruker til å omslutte, pakke inn eller markere ulike deler av innholdet, slik at det vises eller oppfører seg på en bestemt måte. Et HTML dokument (f.eks `index.html`) består av flere [elementer](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements) (også kalt [tags](https://developer.mozilla.org/en-US/docs/Glossary/Tag)), blant disse er flere av dem nødvendig for å kunne skikkelig vise innholdet. Under kan du se et minimalistisk eksempel på HTML
+HTML (HyperText Markup Language) er et markeringsspråk som forteller nettlesere hvordan de skal strukturere nettsidene du besøker, og består av en serie elementer som du bruker til å omslutte, pakke inn eller markere ulike deler av innholdet, slik at det vises eller oppfører seg på en bestemt måte. Et HTML dokument (f.eks `index.html`) består av flere [elementer](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements), blant disse er flere av dem nødvendig for å kunne skikkelig vise innholdet. Under kan du se et minimalistisk eksempel på HTML
 
 ```html
 <!DOCTYPE html>
@@ -46,15 +46,28 @@ HTML (HyperText Markup Language) er et markeringsspråk som forteller nettlesere
 </html>
 ```
 
-Elements and tags are not the same things. Tags begin or end an element in source code, whereas elements are part of the DOM, the document model for displaying the page in the browser.
+### Domain object model (DOM)
+
+> [!NOTE]
+> Du kan lese mer om DOM her ([mdn](https://developer.mozilla.org/en-US/docs/Glossary/DOM))
+
+Nettleseren eller serveren som leser HTML koden vi har skrevet tolker så alle elementene i koden, og lager et [DOM-tree](https://developer.mozilla.org/en-US/docs/Glossary/DOM) av innholdet, vi kan da programatisk manipulere innholdet på siden med Javascript.
+Du kan se på det som at DOM er bare HTML konvertert til et format som nettleseren kan forstå og jobbe med.
+
+For nå er det godt nok at dere vet om DOM og at det er måten nettleseren behandler HTML, vi kommer til lære mer utdypende om dette i Javascript emnet senere.
 
 ### HTML elementer
-HTML består av [elementer](https://developer.mozilla.org/en-US/docs/Glossary/Element) (som [tags](https://developer.mozilla.org/en-US/docs/Glossary/Tag)) som forteller noe om innholdet.
-
-### Semantisk HTML
 
 > [!NOTE]  
 > Liste over alle HTML elementer er tilgjengelig på [mdn](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)
+
+[Elementer](https://developer.mozilla.org/en-US/docs/Glossary/Element) er en av byggeklossene vi bruker for å sitte sammen en HTML fil/dokument, og består som regel av flere deler. I bildet under kan vi se et eksempel på hvordan et paragraf element er satt sammen.
+
+![alt text](html-element-anatomy.png)
+
+Ofte blir elementer og [tagger](https://developer.mozilla.org/en-US/docs/Glossary/Tag) brukt om hverandre, men her er det viktig å være konsekvent på ordbruken. [Tagger](https://html.spec.whatwg.org/multipage/syntax.html#elements-2) starter eller avslutter et element i kildekoden, mens elementer er en del av dokumentmodellen (DOM) som brukes for å vise siden i nettleseren.
+
+### Semantisk HTML
 
 [Semantisk HTML](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html) betyr å bruke elementer som har riktig _betydning_ for innholdet du skriver. Det gjør sidene dine lettere å forstå for både nettlesere, søkemotorer og hjelpemidler som skjermlesere.
 
@@ -97,37 +110,26 @@ Som du ser, formidler den semantiske versjonen bedre _hva_ de forskjellige delen
 
 ### Kategorier
 
-De fleste HTML-elementer tilhører en eller flere [kategorier](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories), avhengig av felles egenskaper. Dette er en løs inndeling som hjelper med å definere og beskrive kategorienes felles oppførsel og tilhørende regler er.
-
-Innholdskategoriene brukes til å definere innholdsmodellen til elementer — med andre ord hva hvert element kan ha som etterkommere (barn/underliggende elementer). For eksempel kan et `<p>`-element bare inneholde 'frase' innhold (phrasing content), mens et `<div>`-element kan inneholde flytinnhold (flow content).
+De fleste HTML-elementer tilhører en eller flere [kategorier](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories), avhengig av felles egenskaper. Dette er en løs inndeling som hjelper med å definere og beskrive kategorienes felles oppførsel og tilhørende regler er. Innholdskategoriene brukes til å definere innholdsmodellen til elementer — med andre ord hva hvert element kan ha som etterkommere (barn/underliggende elementer). For eksempel kan et `<p>`-element bare inneholde 'frase' innhold (phrasing content), mens et `<div>`-element kan inneholde flytinnhold (flow content).
 
 Det finnes sju hovedkategorier for innhold, som kan oppsummeres med Venn-diagrammet nedenfor
+
 ![alt text](html-element-categories.png)
 
 Du kan lese mer om hver kategori, og alle HTML elementer som tilhører den, ved å klikke en link under.
 
 - [Metadata content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#metadata_content) - Definerer eller endrer funksjonalitet
 - [Flow content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#flow_content) - De aller fleste elementer faller i denne kategorien
-- [Sectioning content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#metadata_content)
-- [Heading content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#heading_content)
-- [Phrasing content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content)
-- [Embedded content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#embedded_content)
+- [Sectioning content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#metadata_content) - For å dele en flow i seksjoner
+- [Heading content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#heading_content) - For å gi en "section content" en tittel
+- [Phrasing content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content) - Refererer til tekst og markup i et dokument
+- [Embedded content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#embedded_content) - Elementer som importerer eller henter inn innhold
 
 ### Nesting
 
 Elementer som tilhører flow,
 
 ### Attributter
-
-## Domain object model (DOM)
-
-> [!NOTE]
-> Du kan lese mer om DOM her ([mdn](https://developer.mozilla.org/en-US/docs/Glossary/DOM))
-
-Nettleseren eller serveren som leser HTML koden vi har skrevet tolker så alle elementene i koden, og lager et [DOM-tree](https://developer.mozilla.org/en-US/docs/Glossary/DOM) av innholdet, vi kan da programatisk manipulere innholdet med Javascript.
-DOM er bare HTML konvertert til et format som nettleseren kan forstå og jobbe med
-
-For nå er det godt nok at dere vet om DOM, vi kommer til lære mer utdypende om DOM i Javascript emnet senere.
 
 ## Linking
 

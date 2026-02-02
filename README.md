@@ -17,7 +17,10 @@ Før du starter, sørg for at du har følgende programmer på plass:
 - Nettleser med DevTools: f.eks. [Chrome](https://www.google.com/intl/no/chrome/) eller [Firefox](https://www.firefox.com/nb-NO/) for debugging.
 - Git: installert lokalt (f.eks [git-scm](https://git-scm.com/) eller følg [denne guiden](https://github.com/git-guides/install-git)), og en [GitHub-bruker](https://github.com/login) for å kunne pushe kode og levere oppgave.
 
-Når verktøyene over er klare:
+Når verktøyene over er klare kan du fortsette
+
+> [!IMPORTANT]  
+> Les instuksene nøye før du begynner å jobbe
 
 1. **Klone repoet**: Last ned/kopier dette repoet til din maskin ([link](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)). Hvis du ikke har push-tilgang, kan du _forke_ repoet på GitHub og deretter klone din egen fork.
 2. **Opprett en branch**: Lag en ny branch for arbeidet ditt, med et fornuftig navn. For eksempel, `assignment-<ditt-navn>` (ingen mellomrom eller norske tegn). Pass på at du **jobber på din egen branch** og ikke på `main`.

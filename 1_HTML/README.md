@@ -8,14 +8,12 @@ HTML kan bety flere forskjellige ting avhengig av hvem du spør, det vi skal læ
 > Klikk på en link for å hoppe rett til emnet
 
 - [Hva er HTML](#hva-er-html)
-  - [Domain object model (DOM)](#domain-object-model-dom)
+- [Domain object model (DOM)](#domain-object-model-dom)
   - [HTML elementer](#html-elementer)
   - [Semantisk HTML](#semantisk-html)
   - [Kategorier](#kategorier)
   - [Nesting](#nesting)
   - [Attributter](#attributter)
-- [Linking](#linking)
-- [Tabeller](#tabeller)
 - [Skjemaer](#skjemaer-forms)
 - [Events](#events)
 - [Tilgjengelighet](#tilgjengelighet-accessibility)
@@ -46,7 +44,7 @@ HTML (HyperText Markup Language) er et markeringsspråk som forteller nettlesere
 </html>
 ```
 
-### Domain object model (DOM)
+## Domain object model (DOM)
 
 > [!NOTE]
 > Du kan lese mer om DOM her ([mdn](https://developer.mozilla.org/en-US/docs/Glossary/DOM))
@@ -56,7 +54,7 @@ Du kan se på det som at DOM er bare HTML konvertert til et format som nettleser
 
 For nå er det godt nok at dere vet om DOM og at det er måten nettleseren behandler HTML, vi kommer til lære mer utdypende om dette i Javascript emnet senere.
 
-### HTML elementer
+## HTML elementer
 
 > [!NOTE]  
 > Liste over alle HTML elementer er tilgjengelig på [mdn](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)
@@ -145,9 +143,50 @@ I eksempelet over kan du observere følgende:
 
 ### Attributter
 
-## Linking
+Elementer i HTML har som regel [attributter](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) vi kan bruke, dette er tilleggsverdier som konfigurerer elementene (ved å sitte metadata) eller justerer oppførselen deres på ulike måter. [Globale attributter](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes) er attributter som er felles for alle HTML-elementer, for en fullstendig liste over attributter må du se på hva som er tilgjengelig for elementet du jobber med (f.eks alle [input attributer](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#attributes)).
 
-## Tabeller
+Et attributt har alltid formen `navn="verdi"` (attributtets identifikator etterfulgt av den tilknyttede verdien) og ligger i start taggen på elementet. Du kan også se [attributter uten likhetstegn eller verdi](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes#boolean_attributes), dette en kortform som betyr at attributtet får en tom streng som verdi. Under kan du se eksempler på hvordan vi bruker attributes
+
+```html
+<input
+  type="text"
+  id="name"
+  name="name"
+  required
+  minlength="4"
+  maxlength="8"
+  size="10"
+/>
+```
+
+#### Data-attributter
+
+I tillegg til globale eller element spesefikke attributter har vi også data-attributter. Syntaksen for dette er veldig enkel: Ethvert attributt på et hvilket som helst element der attributtnavnet starter med `data-`, er en data attributt.
+Hovedsakelig brukes dette for å lagre egen, tilpasset metadata på et element, typisk for at JavaScript skal kunne lese det. `data-*` attributter består av to deler:
+
+- **navnet** skal ikke inneholde store bokstaver, og må være minst ett tegn langt etter prefikset `data-`.
+- **verdien** Må være streng.
+
+```html
+<button
+  type="button"
+  data-price="69"
+  data-sold-out="false"
+  onclick="console.log(this.dataset.price)"
+>
+  Kjøp nå!
+</button>
+```
+
+I eksempelet over så sittes vi prisen ved å lage `data-price` data-attributten og sitte verdien til `69`, vi kan så hente ut data verdien via javascript og eventuelt bruke verdien i kalkulasjoner og logikk etterpå.
+
+I Tillegg til Javascript er kan man også kombinere data-attributter med CSS for å målrettet ligge til styling.
+
+```css
+button[data-sold-out="true"] {
+  background-color: red;
+}
+```
 
 ## Skjemaer (forms)
 

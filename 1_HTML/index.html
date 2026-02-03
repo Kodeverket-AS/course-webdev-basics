@@ -3,68 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/2_CSS/style.css" />
     <title>Semantic HTML</title>
   </head>
   <body>
     <!-- Header -->
     <header>
       <nav>
-        <a href="/">FrontendForge</a>
-        <ul>
-          <li><a href="#">Vision</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+        <a class="logo" href="/">FrontendForge</a>
+        <div class="nav-link">
+          <a href="#">Vision</a>
+          <a href="#">Contact</a>
+        </div>
       </nav>
     </header>
 
     <!-- Main  -->
     <main>
-      <section class="section_1">
-        <h1>Frontend Forge</h1>
-        <h2>A social platform for web developers and designers</h2>
-        <p>
-          Frontend Forge is a social platform for web developers and designers.
-          Create a profile, save and share projects, get feedback with likes and
-          comments, participate in forums – and showcase your portfolio publicly
-          for employers.
-        </p>
-        <img src="/public//Workingtogether.jpg" alt="People working together" />
-      </section>
+      <div class="layout-container">
+        <div class="content-container">
+          <section class="section-1">
+            <h1>Frontend Forge</h1>
+            <h2>A social platform for web developers and designers</h2>
+            <p>
+              Frontend Forge is a social platform for web developers and
+              designers. Create a profile, save and share projects, get feedback
+              with likes and comments, participate in forums – and showcase your
+              portfolio publicly for employers.
+            </p>
+            <img
+              src="/public//Workingtogether.jpg"
+              alt="People working together"
+            />
+          </section>
 
-      <section class="section_2">
-        <h2>Roadmap</h2>
-        <h3>Frontend Forge Plan</h3>
-        <h4>Core Platform</h4>
-        <p>Profiles, projects, likes, comments and forums.</p>
+          <section class="section-2">
+            <h2>Roadmap</h2>
+            <h3>Frontend Forge Plan</h3>
+            <h4>Core Platform</h4>
+            <p>Profiles, projects, likes, comments and forums.</p>
 
-        <h4>Community and Moderation</h4>
-        <p>Better profiles, groups and community tools.</p>
+            <h4>Community and Moderation</h4>
+            <p>Better profiles, groups and community tools.</p>
 
-        <h4>Intelligent Matching</h4>
-        <p>Suggestions for projects, people and content (AI).</p>
+            <h4>Intelligent Matching</h4>
+            <p>Suggestions for projects, people and content (AI).</p>
 
-        <h4>Collaboration at Scale</h4>
-        <p>Team features, workflows and portfolio for employers.</p>
-      </section>
+            <h4>Collaboration at Scale</h4>
+            <p>Team features, workflows and portfolio for employers.</p>
+          </section>
 
-      <section class="section_3">
-        <img src="/public//TechnicalImg.jpg" alt="Technical image" />
-        <h2>Laying the Foundation</h2>
-        <h3>MVP in development</h3>
-        <p>
-          The focus of the first version is clear: profiles and portfolios,
-          projects with sharing, likes, and comments, as well as a simple forum
-          for discussions. This creates a solid foundation – professional, yet
-          designed for creative people who want to shape a digital future
-          together.
-        </p>
+          <section class="section-2">
+            <img src="/public//TechnicalImg.jpg" alt="Technical image" />
+            <h2>Laying the Foundation</h2>
+            <h3>MVP in development</h3>
+            <p>
+              The focus of the first version is clear: profiles and portfolios,
+              projects with sharing, likes, and comments, as well as a simple
+              forum for discussions. This creates a solid foundation –
+              professional, yet designed for creative people who want to shape a
+              digital future together.
+            </p>
 
-        <p>
-          This is not just a platform – it’s a foundation for the creative
-          coders of the future. A base where innovation meets collaboration,
-          where individual visions become collective power.
-        </p>
-      </section>
+            <p>
+              This is not just a platform – it’s a foundation for the creative
+              coders of the future. A base where innovation meets collaboration,
+              where individual visions become collective power.
+            </p>
+          </section>
+        </div>
+        <div class="add-container">
+          <article>
+            <h4>Add space</h4>
+            <img src="" alt="Add image" />
+            <p>Add text</p>
+          </article>
+        </div>
+      </div>
     </main>
 
     <!-- Form -->

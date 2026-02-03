@@ -20,8 +20,8 @@
     <!-- Main  -->
     <main>
       <section class="section_1">
-        <h2>Frontend Forge</h2>
-        <h3>A social platform for web developers and designers</h3>
+        <h1>Frontend Forge</h1>
+        <h2>A social platform for web developers and designers</h2>
         <p>
           Frontend Forge is a social platform for web developers and designers.
           Create a profile, save and share projects, get feedback with likes and
@@ -49,8 +49,8 @@
 
       <section class="section_3">
         <img src="/public//TechnicalImg.jpg" alt="Technical image" />
-        <h3>Laying the Foundation</h3>
-        <h4>MVP in development</h4>
+        <h2>Laying the Foundation</h2>
+        <h3>MVP in development</h3>
         <p>
           The focus of the first version is clear: profiles and portfolios,
           projects with sharing, likes, and comments, as well as a simple forum
@@ -68,15 +68,15 @@
     </main>
 
     <!-- Form -->
-    <form>
+    <form method="post">
       <label for="navn">Name</label>
-      <input type="text" id="navn" required />
+      <input type="text" id="navn" name="name" required />
 
       <label for="email">Email</label>
-      <input type="email" id="email" required />
+      <input type="email" id="email" name="email" required />
 
       <label for="message">Message:</label>
-      <textarea name="" id="message" required></textarea>
+      <textarea id="message" name="message" required></textarea>
 
       <button type="submit">Submit</button>
     </form>
@@ -94,8 +94,8 @@
       <nav aria-label="Community links">
         <h3>Community</h3>
         <ul>
-          <a href="#">Discord</a>
-          <a href="#">Instagram</a>
+          <li><a href="#">Discord</a></li>
+          <li><a href="#">Instagram</a></li>
         </ul>
       </nav>
 

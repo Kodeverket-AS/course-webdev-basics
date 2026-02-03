@@ -20,9 +20,11 @@
 
 body {
   margin: 0;
+  max-width: 100%;
   background-color: var(--bgX);
   color: var(--text);
 }
+
 header {
   display: flex;
   align-items: center;
@@ -62,33 +64,41 @@ a {
 }
 
 main {
-  margin: 1.5rem;
+  max-width: 1536px;
+  margin-inline: auto;
+  padding: 1.5rem;
 }
 
 /* Layout-containeren (hovedinnhold vs sideinnhold/aside) har to kolonner på brede skjermer, og faller tilbake til én kolonne på smale skjermer (via media query). */
 .layout-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   border: 2px solid green;
+  width: 100%;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1224px) {
   .layout-container {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 }
 
 .content-container {
-  border: 2px solid white;
   flex: 2;
+  max-width: 100%;
+  border: 2px solid white;
 }
 
 .add-container {
-  border: 2px solid yellow;
   flex: 1;
+  display: flex;
+  justify-content: center;
+
+  border: 2px solid yellow;
+}
+@media (min-width: 1224px) {
+  .add-container {
+    max-width: 21rem;
+  }
 }
 
 section {
@@ -100,6 +110,46 @@ section {
 }
 
 article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 400;
+  color: var(--h1);
+}
+
+.add-desktop-1,
+.add-desktop-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.add-image-vitamin-D {
+  width: 100%;
+  max-width: 332px;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 2px;
+}
+.add-image-creatine {
+  width: 100%;
+  max-width: 332px;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 2px;
+}
+
+@media (min-width: 1224px) {
+  .add-container-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1224px) {
+  .add-container-mobile {
+    display: none;
+  }
 }
 
 form {

@@ -84,7 +84,7 @@ main {
 
 .content-container {
   flex: 2;
-  max-width: 100%;
+
   border: 2px solid white;
 }
 
@@ -102,11 +102,18 @@ main {
 }
 
 section {
+    display: grid;
+    min-height: 80vh;
+    border: solid 1px red;
 }
 
-.section-1 {
+.section-1-left {
+    
 }
-.section-2 {
+.section-1-right {
+}
+
+.section-3 {
 }
 
 article {
@@ -114,20 +121,22 @@ article {
   flex-direction: column;
   justify-content: space-between;
   font-weight: 400;
+  height: 100%;
   color: var(--h1);
 }
 
 .add-desktop-1,
 .add-desktop-2 {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .add-image-vitamin-D {
   width: 100%;
   max-width: 332px;
   height: auto;
-  display: block;
   margin: 0;
   border-radius: 2px;
 }
@@ -135,7 +144,6 @@ article {
   width: 100%;
   max-width: 332px;
   height: auto;
-  display: block;
   margin: 0;
   border-radius: 2px;
 }
@@ -147,9 +155,17 @@ article {
 }
 
 @media (max-width: 1224px) {
-  .add-container-mobile {
+  .add-container-desktop {
     display: none;
   }
+}
+
+.add-gymg {
+  width: 100%;
+  max-width: 1140px;
+  height: auto;
+  margin: 0;
+  border-radius: 2px;
 }
 
 form {

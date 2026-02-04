@@ -9,10 +9,10 @@
 <body>
     <header>
         <h1>The HTML basics</h1>
-        <nav>
+        <nav class="main-nav">
             <a href="#Home">Home</a>
             <a href="#About">About</a>
-        </nav>
+        </div>
     </header>   
 
     <main>
@@ -34,15 +34,17 @@
         </div>
     </main>
 
-    <form>
-        <label for="fname">First Name:</label><br>
-        <input type="text" id="fname" name="fname" required><br>
-        <label for="lname">Last Name:</label><br>
-        <input type="text" id="lname" name="lname" required><br>
-        <label for="user_comments">Share Feedback:</label><br>
-        <textarea id="comments" name="user_comments" rows="3" cols="40" placeholder="Enter your detailed feedback here..."></textarea><br>
-        <button type="submit">Send</button>
-    </form>
+    <div class="form-container">
+        <form>
+            <label for="fname">First Name:</label><br>
+            <input type="text" id="fname" name="fname" required><br>
+            <label for="lname">Last Name:</label><br>
+            <input type="text" id="lname" name="lname" required><br>
+            <label for="user_comments">Share Feedback:</label><br>
+            <textarea id="user_comments" name="user_comments" rows="3" cols="40" placeholder="Enter your detailed feedback here..."></textarea><br>
+            <button type="submit" class="submit-btn">Send</button>
+        </form>
+    </div>
 
     <footer>
         <div class="footer-content">

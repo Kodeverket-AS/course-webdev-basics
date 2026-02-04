@@ -12,3 +12,23 @@ header {
     background-color: rgb(187, 226, 255);
     border: 2px solid rgb(0, 0, 0);
 }
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(165, 209, 242);
+    padding: 5px 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(17, 35, 50);
+    padding: 8px 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: rgb(37, 121, 218);
+}

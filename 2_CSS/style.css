@@ -6,7 +6,8 @@
   --ctaHover: #edce6a;
   --text: #6b6b78;
   --h1: #dddddd;
-  --h234: #76767d;
+  --h2: #d5d5da;
+  --h34: #76767d;
 
   --text-14: 0.875rem;
   --text-16: 1rem;
@@ -17,7 +18,7 @@
 * {
   box-sizing: border-box;
 }
-
+/* body */
 body {
   margin: 0;
   max-width: 100%;
@@ -25,6 +26,35 @@ body {
   color: var(--text);
 }
 
+h1 {
+  color: var(--h1);
+  background-image: linear-gradient(to right, white, #9b8d60);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  font-size: clamp(2rem, 5vw, 9rem);
+  font-weight: bold;
+  margin-bottom: 2.2rem;
+}
+h2 {
+  color: var(--h2);
+}
+h3 {
+  color: var(--h234);
+}
+h4 {
+  color: var(--h234);
+}
+p {
+  color: var(--text);
+  font-size: 1.2rem;
+  line-height: calc(1.25 / 0.875);
+}
+
+/* header */
 header {
   display: flex;
   align-items: center;
@@ -36,6 +66,7 @@ header {
   font-size: var(--text-20);
 }
 
+/* nav  */
 /* lenker har padding/hover-effekt */
 nav {
   display: flex;
@@ -62,17 +93,15 @@ a {
   display: flex;
   gap: 3rem;
 }
-
+/* main  */
 main {
   max-width: 1536px;
   margin-inline: auto;
-  padding: 1.5rem;
 }
 
 /* Layout-containeren (hovedinnhold vs sideinnhold/aside) har to kolonner på brede skjermer, og faller tilbake til én kolonne på smale skjermer (via media query). */
 .layout-container {
   display: flex;
-  border: 2px solid green;
   width: 100%;
 }
 
@@ -84,8 +113,6 @@ main {
 
 .content-container {
   flex: 2;
-
-  border: 2px solid white;
 }
 
 .add-container {
@@ -102,19 +129,60 @@ main {
 }
 
 section {
-    display: grid;
-    min-height: 80vh;
-    border: solid 1px red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80vh;
+  border: solid 1px red;
+}
+@media (min-width: 1224px) {
+  section {
+    max-width: 69vw;
+  }
 }
 
 .section-1-left {
-    
-}
-.section-1-right {
+
 }
 
-.section-3 {
+.section-1-para {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35vw;
+  margin-top: 3.5rem;
 }
+
+.section-1-right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 30vw;
+  height: auto;
+  margin-top: 6rem;
+}
+
+.section-1-img{
+  width: 100%;
+  height: auto;
+  margin-top: 6rem;
+  padding-right: 1rem;
+}
+
+
+.section-2 {
+display: flex;
+flex-direction: column;
+}
+.section-2-content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+.section-2-square{
+  border: solid 1px green;
+}
+
 
 article {
   display: flex;
@@ -168,8 +236,9 @@ article {
   border-radius: 2px;
 }
 
+/* form  */
 form {
 }
-
+/* footer  */
 footer {
 }

@@ -16,17 +16,6 @@ header {
     text-align: center;
 }
 
-
-ul a:link {
-    text-decoration: none;
-}
-
-ul a:hover {
-    text-decoration: none;
-    color: white;
-    font-weight: bolder
-}
-
 ul {
     display: flex;
     justify-content: space-around;
@@ -36,12 +25,23 @@ ul {
     padding: 0px;
 
 }
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: white;
+    font-weight: bolder;
+    font-size: 25px;
+}
 
 .layout-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 @media (max-width: 600px) {
@@ -52,3 +52,6 @@ ul {
         flex-direction: column; align-items: flex-start;
      }
 }
+img { 
+    max-width: 100%; height: auto;
+ }

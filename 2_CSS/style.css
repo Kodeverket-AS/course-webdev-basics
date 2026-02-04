@@ -35,23 +35,33 @@ h1 {
   -webkit-text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
 
-  font-size: clamp(2rem, 5vw, 9rem);
+  font-size: clamp(3rem, 8vw, 6.2rem);
   font-weight: bold;
   margin-bottom: 2.2rem;
 }
 h2 {
+  font-size: clamp(1.2rem, 2vw, 3rem);
+  font-weight: 400;
   color: var(--h2);
 }
 h3 {
-  color: var(--h234);
+  color: var(--cta);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 12px;
 }
 h4 {
-  color: var(--h234);
+  color: var(--h2);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 12px;
 }
 p {
   color: var(--text);
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: calc(1.25 / 0.875);
+  word-spacing: 1px;
+  margin: 12px;
 }
 
 /* header */
@@ -112,7 +122,9 @@ main {
 }
 
 .content-container {
-  flex: 2;
+  flex: 1 1 auto;
+  min-width: 0;
+  /* width: 100%; */
 }
 
 .add-container {
@@ -142,7 +154,6 @@ section {
 }
 
 .section-1-left {
-
 }
 
 .section-1-para {
@@ -162,27 +173,45 @@ section {
   margin-top: 6rem;
 }
 
-.section-1-img{
+.section-1-img {
   width: 100%;
   height: auto;
   margin-top: 6rem;
   padding-right: 1rem;
 }
 
-
 .section-2 {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  padding: 7rem;
 }
-.section-2-content{
+.section-2-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
+  gap: 1rem;
+  margin-top: 2.5rem;
 }
-.section-2-square{
-  border: solid 1px green;
+.section-2-square {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 22vw;
+  height: 20vh;
+  /* border: solid 1px green; */
 }
-
+.dott {
+  /* width: 0.7rem;
+  height: 0.7rem;
+  background-color: var(--cta);
+  border-radius: 100%; */
+}
+.line {
+  /* position: absolute;
+  width: 2px;
+  height: 80vh;
+  background-color: var(--border); */
+}
 
 article {
   display: flex;

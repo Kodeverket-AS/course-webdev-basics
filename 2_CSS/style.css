@@ -4,6 +4,7 @@ body {
     font-family:Arial, Helvetica, sans-serif;
     color: blue ;
     background: yellow;
+    text-align: center;
     
 }
 header {
@@ -32,4 +33,11 @@ ul {
     margin: 15px;
     padding: 0px;
 
+}
+
+.layout-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
 }

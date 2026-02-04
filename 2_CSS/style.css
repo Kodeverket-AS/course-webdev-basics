@@ -9,14 +9,14 @@ body {
     text-align: center;
     
 }
+
 header {
     color: yellow;
     background: blue;
     border: 3px solid black;
     text-align: center;
-    width: 300px;
+    width: 50%;
     margin: 0 auto;
-
 }
 
 ul {
@@ -24,10 +24,14 @@ ul {
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    margin: 15px;
+    margin: 30px auto;
     padding: 0px;
-
 }
+
+form {
+    margin: 50px auto;
+}
+
 .nav-link {
     text-decoration: none;
 }
@@ -41,10 +45,14 @@ ul {
 .layout-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 50px;
     padding: 20px;
+}
+
+main { 
+    padding: 16px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 @media (max-width: 600px) {
@@ -52,7 +60,8 @@ ul {
         grid-template-columns: 1fr;
     }
     ul { 
-        flex-direction: column; align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
      }
 }
 

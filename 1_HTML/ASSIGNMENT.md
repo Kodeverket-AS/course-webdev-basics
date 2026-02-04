@@ -42,12 +42,14 @@ For å betrakte oppgaven som _bestått_ skal følgende minimum være oppfylt:
 
 ## Refleksjon
 
-Tenk over følgende utsagn for å vurdere om du har forstått emnene vi har gått igjennom i HTML, hvis du ikke kan svaret på spørsmålet eller ikke klarer å forklare det skikkelig, bør du repitere emnet.
+Tenk over følgende utsagn for å vurdere om du har forstått det vi har gått igjennom. Hvis du ikke kan svaret på spørsmålet eller ikke klarer å forklare det skikkelig, så kan du klikke på liken for å repitere emnet.
 
-1. Hva står `DOM` for og hva er det?
-2. Hva er de vigtigste delene av en `DOM` tree som må være inkludert for at en HTML fil skal fungere?
-3. Hva er et HTML element, og har du noen eksempler på elementer?
-4. Hva er en HTML attribut, og har du noen eksempler på attributter og hvordan de brukes?
-5. Hva er hovedforskjellen mellom `id` og `class` attributene og når vill du bruke dem?
-6. Har rekkefølgen på elementer i HTML koden noe å si?
-7. Når du beskriver HTML kode, brukes vi ofte begrepene child og parent, hva mener vi her?
+1. [Hva står DOM for og hva er det](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)?
+2. [Hva er de vigtigste delene av en HTML fil/dokument som må være inkludert](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#anatomy_of_an_html_document)?
+3. [Hva er et HTML element](https://developer.mozilla.org/en-US/docs/Glossary/Element), og har du noen [eksempler på elementer](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)?
+4. [Hva er en HTML attribut](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#attributes), og har du noen [eksempler på attributter](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes) og [hvordan de brukes](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#attributes)?
+5. [Hva er en data attribut](https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes)?
+6. Hva er hovedforskjellen mellom [id](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/id) og [class](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/class) attributene og når vill du bruke dem?
+7. [Har rekkefølgen på elementer i HTML koden noe å si](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragraphs)?
+8. Når vi beskriver HTML kode, brukes vi ofte begrepene child, parent og siblings, [hva mener vi her](README.md#nesting)?
+9. [Hvordan kan du trygt bruke spesielle tegn](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#character_references_including_special_characters_in_html) som `<`, `"` eller `$`?

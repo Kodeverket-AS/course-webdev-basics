@@ -303,6 +303,7 @@ article {
 
 /* form  */
 form {
+  
 }
 
 /* footer  */
@@ -310,19 +311,16 @@ footer {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  height: 26rem;
+  justify-content: space-around;
+  align-items: center;
+  height: 25rem;
   width: 100%;
   background-color: var(--bgY);
   margin-top: 4rem;
   padding-top: 2rem;
 }
 footer p {
-  position: absolute;
-  width: max-content;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .article-footer,

@@ -112,17 +112,22 @@ nav {
 }
 @media (max-width: 768px) {
   nav {
-    padding: 1rem;
+    padding: 0.5rem;
   }
   .logo {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding: 0.1rem;
   }
+  .nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .text-link {
-    font-size: var(--text-16);
+    font-size: var(--text-14);
+    padding: 0;
   }
 }
-/*! Husk Hover */
 
 .nav-link {
   display: flex;
@@ -176,7 +181,7 @@ section {
   justify-content: space-between;
   align-items: center;
   min-height: 75vh;
-  padding: 1rem;
+  padding: 0.1rem;
 }
 @media (min-width: 1224px) {
   section {
@@ -189,10 +194,26 @@ section {
 .section-1-left {
   max-width: 50vw;
 }
+@media (max-width: 768px) {
+  .section-1-left {
+    max-width: 90vw;
+  }
+  .section-1-left h1 {
+    font-size: 2.2rem;
+  }
+  .section-1-left h2 {
+    font-size: var(--text-20);
+  }
+  .section-1-para {
+    width: 100%;
+    margin: 0;
+    padding-right: 1.5rem;
+  }
+}
 
 .section-1-para {
   width: 100%;
-  margin-top: 3.5rem;
+  margin-top: 2.4rem;
 }
 
 .section-1-right,

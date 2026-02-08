@@ -20,4 +20,13 @@ Nå skal du gjøre siden din levende ved hjelp av JavaScript. Vi bygger videre p
 
 Tenk over følgende utsagn for å vurdere om du har forstått det vi har gått igjennom. Hvis du ikke kan svaret på spørsmålet eller ikke klarer å forklare det skikkelig, så kan du klikke på liken for å repitere emnet.
 
-- wip
+Hva er en data-type, og hvilken typer har vi i JS?
+Hva er type-coercion, og hvorfor bruker vi det?
+Hva er en variabel, og hvilke nøkkel-ord bruker vi for dette i moderne JS?
+Hva er en funksjon og hvordan lager du en?
+Hva er scoope i JS?
+Hva er closures og side-effekter
+
+Anbefaler at du også har kjentskap med følgende konsepter, men det du vill nok ikke bruke med det første
+Hva er forskjellen mellom ECMAScript Modules (ESM) and CommonJS (CJS)?
+Hva er forskjellen mellom vanlige funksjoner og pil-funksjoner (arrow-functions)?

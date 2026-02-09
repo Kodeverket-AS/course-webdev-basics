@@ -55,4 +55,22 @@ For å betrakte oppgaven som _bestått_ skal følgende minimum være oppfylt:
 
 Tenk over følgende utsagn for å vurdere om du har forstått det vi har gått igjennom. Hvis du ikke kan svaret på spørsmålet eller ikke klarer å forklare det skikkelig, så kan du klikke på liken for å repitere emnet.
 
-1. wip
+1. [Hva er cascade i CSS og hvordan påvirker det styling](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Introduction)?
+2. [Hva er en CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors)?
+3. [Hvilken enheter kan vi bruke i CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Values_and_units) og [når bør vi bruke dem](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units)?
+4. [Hva er en psudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes) og [hvorfor bruker vi psudo-elementer](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements)?
+5. [Hva er boks-modellen i CSS](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model) og hvorfor skifter vi ofte mellom `border-box` og `content-box`?
+6. [Hvordan kan vi kontrollere overflowing i CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow)?
+7. [Hvordan kan du bruke positioning for å plasser/flytte HTML elementer](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning)?
+8. [Hva er z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index) og [stacking kontekst](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context)?
+9. Når bør du bruke de forskjellige [display typene](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display): [block](https://developer.mozilla.org/en-US/docs/Glossary/Block/CSS), [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout) og [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout)?
+10. [Hva er responsiv design](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design) og [hvordan bruker du media query](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Using)?
+11. [Hva er en overgang (transition)](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions/Using)?
+12. [hvordan lager du en animasjon i CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using)?
+13. [Hva er en CSS variabel](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables) og [hvordan kan du bruke de](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties)?
+14. [Hva er en CSS value function](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Functions) og har du noen eksempler på ofte brukte funksjoner?
+
+Anbefaler at du også har kjentskap med følgende konsepter, men det du vill nok ikke bruke med det første
+
+1. [Hva er at-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Syntax/At-rules)?
+2. [Hva er en css container type](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/container-type), [container query](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries#using_container_size_queries) og [container context](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries#naming_containment_contexts)?

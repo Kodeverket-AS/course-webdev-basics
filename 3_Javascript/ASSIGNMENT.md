@@ -46,18 +46,20 @@ npm run dev
 
 ## Oppgavesett
 
-1. Kopier over innholdet i HTML og CSS filen fra oppgavene du skrev tidligere, vi skal nå bygge videre på de. Resten av oppgavene vill foregå i `server/src/main.js` filen
-2. Demonstrer at du skjønner hvordan alle data-typene i JS ser ut ved å lage en variabel (med innhold) for hver type. Gjerne bruk data-typen som en del av navnet på variabelen. Hopp over `void`
-3. Demonstrer at du kan lage en vanlig og en arrow funksjon, begge disse funksjonene skal gjøre følgende
+> [!IMPORTANT]  
+> Kopier over innholdet i HTML og CSS filen fra oppgavene du skrev tidligere, vi skal nå bygge videre på de. Resten av oppgavene vill foregå i `server/src/main.js` filen med mindre annet er spesifisert
+
+1. Demonstrer at du skjønner hvordan alle data-typene i JS ser ut ved å lage en variabel (med innhold) for hver type. Gjerne bruk data-typen som en del av navnet på variabelen. Hopp over `void`
+2. Demonstrer at du kan lage en vanlig og en arrow funksjon, begge disse funksjonene skal gjøre følgende
    - Ta i mot en vanlig parameter, og en rest parameter.
    - Bruk [console.log()](https://developer.mozilla.org/en-US/docs/Web/API/console) til å logge alle parametre
    - kall en av funksjonene og send alle variabler du lagde i oppgave 2. som argumenter
-4. På tide av vi gjør noe mer komplekst med arrays og løkker
+3. På tide av vi gjør noe mer komplekst med arrays og løkker
    - Lag en variabel med 99 tall, fra 1 til 100. Bruk f.eks Array prototyper som en snarvei
    - Lag en funksjon som kan ta imot et tall, hvis tallet er et prim-tall, så skal du returnere `Prime!`, ellers returnerer du tallet, men som en streng.
    - Lag en variabel og bruk [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) til å lage en ny array med resultatet fra prime funksjonen du nettopp lagde
    - Log innholdet i variabelen til consol.
-5. Nå skal vi se på hvordan vi kan påvirke HTML med JS ved å koble opp form du lagde tidligere
+4. Nå skal vi se på hvordan vi kan påvirke HTML med JS ved å koble opp form du lagde tidligere
    - Lag en variabel som heter `formElement` hvor du kan lagre form i en variabel, bruk enten [getElementById](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) eller [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) til å knytte den opp mot `<form>` elementet
    - Lag en funksjon som heter `formLogger` som tar imot `event` som parameter, vi skal bruke den senere
    - Det finner mange måter å gjøre forms interaktivt, en måte er å bruke variabelen vi lagde i sted og [ligge på en event listener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener). Her trenger vi to argumenter, først `"submit"` som eventen vi skal følge med på, og så `formLogger` som funksjonen vi skal kalle.
@@ -66,7 +68,7 @@ npm run dev
    - Lag en variabel for hvert `input` felt med [.get()](https://developer.mozilla.org/en-US/docs/Web/API/FormData/get)
    - Log ut i konsollen alle variabelene i følgende format: `<name>: <value>`, f.eks `Name: Ole Gunnar`
    - Bruk JS til å sitte disabled status for knappen i form til `true`
-6. Lag en ny JS fil, du bestemmer navn, og lag en async funksjon i denne filen, kall funksjonen for `fetchData`.
+5. Lag en ny JS fil, du bestemmer navn, og lag en async funksjon i denne filen, kall funksjonen for `fetchData`. Husk å bruke try/catch for feilsikring!
    - `fetchData` skal bruke [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) til å hente inn følgende url
      ```console
      https://dog.ceo/api/breeds/image/random
@@ -79,7 +81,9 @@ npm run dev
      }
      ```
    - `fetchData` funksjonen skal retunere bildet hvis status er "success", hvis ikke så skal funksjonen returnere `null`
-7. hene
+   - Tilbake i `main.js` skal du nå lage en `<img>` element med [createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement), bruke resultatet fra `fetchData` som `src` og `"vite.svg"` som fall-back.
+   - Ligg dette bilde elementet til en av seksjonene eller artiklene i `<main>`
+   - Bonus: bruk CSS for å style bildene, men gjør dette via JS.
 
 ## Akseptansekriterier
 

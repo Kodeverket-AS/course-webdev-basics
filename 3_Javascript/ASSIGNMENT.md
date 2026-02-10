@@ -2,11 +2,61 @@
 
 Nå skal du gjøre siden din levende ved hjelp av JavaScript. Vi bygger videre på HTML/CSS-prosjektet ditt ved å legge til en ekstern script-fil og implementere noen dynamiske funksjoner.
 
-**Merk:** For å teste mye av dette trenger du å kjøre siden din via en lokal server (ikke bare åpne .html-filen direkte). Du kan f.eks. bruke Vite dev server (hvis du har satt opp det i verktøy-modulen) eller VS Code sin _Live Server_-utvidelse. Ellers vil ting som modul-import og fetch av lokale filer bli blokkert av nettleseren.
+> [!WARNING]  
+> For å teste mye av dette trenger du å kjøre siden din via en lokal server ellers vil ting som modul-import og fetch av lokale filer bli blokkert av nettleseren.
+
+For å sitte opp en utviklingsserver for disse oppgavene kommer vi til å bruke Vite fordi det er en robust og enkel løsning, hvis du ønsker å lese mer om dette programmet kan du lese [her](https://vite.dev/). For å installere Vite må vi ha Node.js installert for å få tilgang på NPM registeret (_hvis du bruker en annen run-time kan du finne riktig kommando [her](https://vite.dev/guide/#scaffolding-your-first-vite-project)_)
+
+Åpne terminalen din og kjør følgende kommando fra denne mappen _(du kan f.eks høyreklikke på `3_Javascript/server` mappen og velge `Open in integrated terminal`)_
+
+```bash
+npm install
+```
+
+etterfulgt av
+
+```bash
+npm run dev
+```
+
+For å starte utviklingsserveren. I terminalen vill du se en addresse du kan besøke hvis Vite startet som den skulle.
+
+<details>
+  <summary>Guide for å lage nytt prosjekt</summary>
+ 
+```bash
+npm create vite@latest
+```
+
+Du vill få følgende steg.
+
+1. Skriv enn ditt prosjekt navn, du kan bruke navnet ditt her.
+2. Velg `Vanilla` siden vi ikke trenger noen rammeverk ennå.
+3. Velg `JavaScript` siden vi ikke skal se på TypeScript ennå.
+4. Hvis du får valg om å delta i "Vite beta" eller undersøkelser kan du velge `No`
+5. Velg `Yes` for å installere nå, ellers må du uansett gjøre det senere.
+
+Server starter automatisk, men du kan bruke følgende kommando for å starte manuelt.
+
+```bash
+npm run dev
+```
+
+</details>
 
 ## Oppgavesett
 
-- wip
+1. Kopier over innholdet i HTML og CSS filen fra oppgavene du skrev tidligere, vi skal nå bygge videre på de. Resten av oppgavene vill foregå i `server/src/main.js` filen
+2. Demonstrer at du skjønner hvordan alle data-typene i JS ser ut ved å lage en variabel (med innhold) for hver type. Gjerne bruk data-typen som en del av navnet på variabelen. Hopp over `void`
+3. Demonstrer at du kan lage en vanlig og en arrow funksjon, begge disse funksjonene skal gjøre følgende
+   - Ta i mot et argument, og en rest parameter.
+   - Bruk [console.log()](https://developer.mozilla.org/en-US/docs/Web/API/console) til å logge alle parametre
+   - kall en av funksjonene og send alle variabler du lagde i oppgave 2. som argumenter
+4. På tide av vi gjør noe mer komplekst med arrays og løkker
+    - Lag en variabel med 99 tall, fra 1 til 100. Bruk f.eks Array prototyper som en snarvei
+    - Lag en funksjon som kan ta imot et tall, hvis tallet er et prim-tall, så skal du returnere `Prime!`, ellers returnerer du tallet, men som en streng.
+    - Lag en variabel og bruk [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) til å lage en ny array med resultatet fra prime funksjonen du nettopp lagde
+    - Log innholdet i variabelen til consol.
 
 ## Akseptansekriterier
 

@@ -1,61 +1,63 @@
-<body>
+* { box-sizing: border-box; }
 
-    <header>
-        <h1>Hallaien, verden!</h1>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a class="nav-link" href="#section1">Kodeverket</a></li>
-            <li><a class="nav-link" href="#section2">Varegg Arena</a></li>
-            <li><a class="nav-link" href="#section3">Annen informasjon</a></li>
-        </ul>
-    </nav>
 
-    <main>
-        <div class="layout-container">
-            <section id="section1">
-                <img src="logoHorizontal.png" alt="Kodeverkets logo" width="200" height="100">
-                <h2>Kodeverket</h2>
-                <p>På mandager og onsdager er jeg på Kodeverket i Bergen.</p>
-                <p>Der holder jeg på med et kurs i HTML og CSS.</p>
-                <p>Kodeverkets adresse er Agnes Mowinckels gate 6</p>
-            </section>
-            
-            <section id="section2">
-                <img src="Varegg_logo.png" alt="Varegg Arenas logo" width="200" height="100">
-                <h2>Varegg Arena</h2>
-                <p>På tirsdager og torsdager er jeg på Varegg Arena.</p>
-                <p>Der hjelper jeg med å drifte skjermene med verktøy som Figma og Foyk.</p>
-                <p>Varegg Arenas adresse er Christinegård 25.</p>
-            </section>
-        </div>
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    color: blue ;
+    background: yellow;
+    text-align: center;
     
-        <section id="section3">
-            <img src="question_mark.png" alt="En grå figur som står foran et spørsmålstegn" width="200" height="100">
-            <h2>Annen informasjon</h2>
-            <p>For tiden søker jeg også etter en jobb.</p>
-            <p>Jeg håper å få en jobb innen IT-drift.</p>
-        </section>
+}
 
+header {
+    color: yellow;
+    background: blue;
+    border: 3px solid black;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
 
-        <form>
-            <h2>Vil du sende meg en melding?</h2>
-            <p><label for="message">Din melding:</label></p>
-            <textarea id="message" name="message-input" rows="10" cols="50" required></textarea>
-            <br>
-            <br>
-            <label for="name">Ditt navn:</label>
-            <br>
-            <input type="text" id="name" name="name-input" required>
-            <br>
-            <br>
-            <button type="submit"> Send inn</button>
-        </form>
-    </main>
-    
-    <footer>
-        <p>© Erland Myklebust</p>
-    </footer>
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 30px auto;
+    padding: 0px;
+}
 
-</body>
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: white;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.layout-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 20px;
+}
+
+main { 
+    padding: 16px;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+@media (max-width: 600px) {
+    .layout-container {
+        grid-template-columns: 1fr;
+    }
+    ul { 
+        flex-direction: column;
+        align-items: flex-start;
+     }
+}
+

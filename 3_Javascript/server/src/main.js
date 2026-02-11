@@ -22,8 +22,8 @@ const arrowFunction=(firstarrowArgs,...restarrowArgs)=>{
 
 
 
-//myFunction(number,string,bigInt,boolean,nullValue,undefinedValue,symbol,object);
-*/
+myFunction(number,string,bigInt,boolean,nullValue,undefinedValue,symbol,object);
+
 
 const onetoninetynine=[];
 for (let i=1; i<=99; i++){
@@ -41,3 +41,18 @@ function isPrime(num){
 
 const primeNumbers=onetoninetynine.map(isPrime);
 console.log(primeNumbers);
+
+*/
+
+const formElement = document.getElementById("contact-form");
+
+function formLogger(event){
+    event.preventDefault();
+    const formData=new FormData(formElement);
+    const name=formData.get("name");
+    const message=formData.get("message");
+    console.log("Name:", name);
+    console.log("Message:", message);
+    document.getElementById("form-button").disabled=true;
+} 
+formElement.addEventListener("submit", formLogger);

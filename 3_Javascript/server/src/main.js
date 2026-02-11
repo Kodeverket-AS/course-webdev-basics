@@ -8,11 +8,15 @@ let symbol=Symbol("unique");
 let object={name:"Ola", age:25};
 
 function myFunction(firstArg,...restArgs){
-    console.log(firstArg+restArgs);
+    console.log(firstArg);
+    for (let i = 0; i < restArgs.length; i++) {
+        console.log(restArgs[i]);
+    }
 }
 
 const arrowFunction=(firstarrowArgs,...restarrowArgs)=>{
-    console.log(firstarrowArgs+restarrowArgs);
+    console.log(firstarrowArgs);
+    console.log(restarrowArgs);
 }
 
 myFunction(number,string,bigInt,boolean,nullValue,undefinedValue,symbol,object);

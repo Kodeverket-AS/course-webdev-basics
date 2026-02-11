@@ -2,11 +2,88 @@
 
 Nå skal du gjøre siden din levende ved hjelp av JavaScript. Vi bygger videre på HTML/CSS-prosjektet ditt ved å legge til en ekstern script-fil og implementere noen dynamiske funksjoner.
 
-**Merk:** For å teste mye av dette trenger du å kjøre siden din via en lokal server (ikke bare åpne .html-filen direkte). Du kan f.eks. bruke Vite dev server (hvis du har satt opp det i verktøy-modulen) eller VS Code sin _Live Server_-utvidelse. Ellers vil ting som modul-import og fetch av lokale filer bli blokkert av nettleseren.
+> [!WARNING]  
+> For å teste mye av dette trenger du å kjøre siden din via en lokal server ellers vil ting som modul-import og fetch av lokale filer bli blokkert av nettleseren.
+
+For å sitte opp en utviklingsserver for disse oppgavene kommer vi til å bruke Vite fordi det er en robust og enkel løsning, hvis du ønsker å lese mer om dette programmet kan du lese [her](https://vite.dev/). For å installere Vite må vi ha Node.js installert for å få tilgang på NPM registeret (_hvis du bruker en annen run-time kan du finne riktig kommando [her](https://vite.dev/guide/#scaffolding-your-first-vite-project)_)
+
+Åpne terminalen din og kjør følgende kommando fra denne mappen _(du kan f.eks høyreklikke på `3_Javascript/server` mappen og velge `Open in integrated terminal`)_
+
+```bash
+npm install
+```
+
+etterfulgt av
+
+```bash
+npm run dev
+```
+
+For å starte utviklingsserveren. I terminalen vill du se en addresse du kan besøke hvis Vite startet som den skulle.
+
+<details>
+  <summary>Guide for å lage nytt prosjekt</summary>
+ 
+```bash
+npm create vite@latest
+```
+
+Du vill få følgende steg.
+
+1. Skriv enn ditt prosjekt navn, du kan bruke navnet ditt her.
+2. Velg `Vanilla` siden vi ikke trenger noen rammeverk ennå.
+3. Velg `JavaScript` siden vi ikke skal se på TypeScript ennå.
+4. Hvis du får valg om å delta i "Vite beta" eller undersøkelser kan du velge `No`
+5. Velg `Yes` for å installere nå, ellers må du uansett gjøre det senere.
+
+Server starter automatisk, men du kan bruke følgende kommando for å starte manuelt.
+
+```bash
+npm run dev
+```
+
+</details>
 
 ## Oppgavesett
 
-- wip
+> [!IMPORTANT]  
+> Kopier over innholdet i HTML og CSS filen fra oppgavene du skrev tidligere, vi skal nå bygge videre på de. Resten av oppgavene vill foregå i `server/src/main.js` filen med mindre annet er spesifisert
+
+1. Demonstrer at du skjønner hvordan alle data-typene i JS ser ut ved å lage en variabel (med innhold) for hver type. Gjerne bruk data-typen som en del av navnet på variabelen. Hopp over `void`
+2. Demonstrer at du kan lage en vanlig og en arrow funksjon, begge disse funksjonene skal gjøre følgende
+   - Ta i mot en vanlig parameter, og en rest parameter.
+   - Bruk [console.log()](https://developer.mozilla.org/en-US/docs/Web/API/console) til å logge alle parametre
+   - kall en av funksjonene og send alle variabler du lagde i oppgave 2. som argumenter
+3. På tide av vi gjør noe mer komplekst med arrays og løkker
+   - Lag en variabel med 99 tall, fra 1 til 100. Bruk f.eks Array prototyper som en snarvei
+   - Lag en funksjon som kan ta imot et tall, hvis tallet er et prim-tall, så skal du returnere `Prime!`, ellers returnerer du tallet, men som en streng.
+   - Lag en variabel og bruk [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) til å lage en ny array med resultatet fra prime funksjonen du nettopp lagde
+   - Log innholdet i variabelen til consol.
+4. Nå skal vi se på hvordan vi kan påvirke HTML med JS ved å koble opp form du lagde tidligere
+   - Lag en variabel som heter `formElement` hvor du kan lagre form i en variabel, bruk enten [getElementById](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) eller [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) til å knytte den opp mot `<form>` elementet
+   - Lag en funksjon som heter `formLogger` som tar imot `event` som parameter, vi skal bruke den senere
+   - Det finner mange måter å gjøre forms interaktivt, en måte er å bruke variabelen vi lagde i sted og [ligge på en event listener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener). Her trenger vi to argumenter, først `"submit"` som eventen vi skal følge med på, og så `formLogger` som funksjonen vi skal kalle.
+   - I `formLogger` funksjonen skal du gjøre følgende
+   - Hent ut [formData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) fra eventen
+   - Lag en variabel for hvert `input` felt med [.get()](https://developer.mozilla.org/en-US/docs/Web/API/FormData/get)
+   - Log ut i konsollen alle variabelene i følgende format: `<name>: <value>`, f.eks `Name: Ole Gunnar`
+   - Bruk JS til å sitte disabled status for knappen i form til `true`
+5. Lag en ny JS fil, du bestemmer navn, og lag en async funksjon i denne filen, kall funksjonen for `fetchData`. Husk å bruke try/catch for feilsikring!
+   - `fetchData` skal bruke [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) til å hente inn følgende url
+     ```console
+     https://dog.ceo/api/breeds/image/random
+     ```
+   - Du vil da få tilbake en JSON som ser slik ut
+     ```json
+     {
+       "message": "https://images.dog.ceo/breeds/dachshund/dog-2643027_640.jpg",
+       "status": "success"
+     }
+     ```
+   - `fetchData` funksjonen skal retunere bildet hvis status er "success", hvis ikke så skal funksjonen returnere `null`
+   - Tilbake i `main.js` skal du nå lage en `<img>` element med [createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement), bruke resultatet fra `fetchData` som `src` og `"vite.svg"` som fall-back.
+   - Ligg dette bilde elementet til en av seksjonene eller artiklene i `<main>`
+   - Bonus: bruk CSS for å style bildene, men gjør dette via JS.
 
 ## Akseptansekriterier
 

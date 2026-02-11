@@ -56,3 +56,15 @@ function formLogger(event){
     document.getElementById("form-button").disabled=true;
 } 
 formElement.addEventListener("submit", formLogger);
+
+import {fetchData} from "./dogfetch.js";
+(async () => {
+    const dogImageUrl = await fetchData();
+    let dogImage=document.createElement("img");
+    dogImage.src=dogImageUrl;
+    dogImage.fallback="vite.svg"
+    formElement.parentNode.insertBefore(dogImage,formElement);
+    dogImage.setAttribute("width","600")
+    dogImage.setAttribute("height","300")
+}
+)();

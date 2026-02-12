@@ -73,18 +73,24 @@
 
 13. Du kan si det er det samme som en vanlig variabel i JS. Det er en variabel som holder en verdi (ex: #fff, 1rem, 2em) som kan brukes globalt i css. Så hvist du skal endre farge på et element som strekker seg over flere tags/elementer så kan du endre den globale variabelen slik at alle elementene som bruker den endres.
 
-14.
-Syntax: @function --transparent(--color, --amount){result: hsl(from var--color) h s l / var(--amount)}.
+14. Syntax: @function --transparent(--color, --amount){result: hsl(from var--color) h s l / var(--amount)}.
 
-bruk: 
+bruk:
 .box {
-   background:--transparent(red, 0.5);
+background:--transparent(red, 0.5);
 }
 
-Man kan lage en global function (samme som global var) som man kan bruke på komponenter, fungsjoner kan være så lett som eksemplet, men kan strekke seg langt. Og css er mere effektiv en javascript, med tanke på hastighet på nettside. 
+Man kan lage en global function (samme som global var) som man kan bruke på komponenter, fungsjoner kan være så lett som eksemplet, men kan strekke seg langt. Og css er mere effektiv en javascript, med tanke på hastighet på nettside.
 
 Extra
 
-1.
+1. Det er en måte å sette regler på i css (eller importere noe), som gir bruker kontroll over hvordan css oppfører seg å er ikke begrenset av bare kontroll over elementer.
 
-2.
+2. Container Type: Det er en css egenskap som definerer hvordan et element fungerer som beholder. For å virkelig forstå dette må vi ta med Container Query.
+
+Container Query:
+Her bruker vi "@container" og setter en condisjon, etterfulgt av elementet som inneholder container-type, og setter stylingen den skal ha innen rekkevidden satt i condisjon.
+
+Container Context: sikter til hvilken context container skal brukes i:
+container-type: inline-size;
+container-name: sidebar;

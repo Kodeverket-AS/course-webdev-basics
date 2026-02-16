@@ -1,3 +1,5 @@
+let news=[]
+
 async function getNewest () {
   try {
   const response = await fetch("https://hacker-news.firebaseio.com/v0/newstories.json")
@@ -42,6 +44,6 @@ function createArticleElement(getStorybyId) {
   article.appendChild(span)
   span.appendChild(postedAt)
   span.appendChild(link)
-  
+
   return article
 }

@@ -1,0 +1,14 @@
+git checkout min-branch      # Bytter til din eksisterende feature-branch
+
+git fetch origin             # Henter siste oppdateringer fra remote (f.eks. GitHub) uten å endre din lokale branch
+
+git merge origin/main        # Slår sammen siste versjon av main inn i din branch
+
+
+Hvis det oppstår konflikter:
+
+git add .                    # Marker konfliktfiler som løst etter at du har redigert dem
+
+git commit                   # Lager en merge commit som fullfører sammenslåingen
+
+

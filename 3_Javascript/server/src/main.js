@@ -1,3 +1,4 @@
+// Oppgave 1
 // Data typer
 
 // Number 
@@ -26,7 +27,7 @@ const d = Symbol();
 // Object 
 const person = {firstName: "jhon", lastName:"Doe"};
 
-
+// Oppgave 2
 function foo(p, ...para){
 console.log(p, ...para)
 }
@@ -37,3 +38,33 @@ const baa = (b, ...para) => {
 
 foo(num, bigI, str, x, y, a, j, k, d, person);
 baa(num, bigI, str, x, y, a, j, k, d, person);
+
+
+// Oppgave 3
+
+const start = 1;
+const lengthX = 100;
+
+const myAr = Array.from({length: lengthX}, (_, i) => start + i)
+
+function myN(n){
+  let string = n.toString()
+
+  if (n <= 1){
+    return string;
+  }
+  if (n === 2){
+    return "Prime"
+  }
+  if(n % 2 === 0){
+    return string;
+  }
+
+  for (let i = 3; i * i <= n; i += 2){
+    if (n % i === 0){
+        return string;
+    }
+  }
+}
+
+console.log(myN(6))

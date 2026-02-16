@@ -26,3 +26,14 @@ const d = Symbol();
 // Object 
 const person = {firstName: "jhon", lastName:"Doe"};
 
+
+function foo(p, ...para){
+console.log(p, ...para)
+}
+
+const baa = (b, ...para) => {
+    console.log(b, ...para)
+};
+
+foo(num, bigI, str, x, y, a, j, k, d, person);
+baa(num, bigI, str, x, y, a, j, k, d, person);

@@ -1,3 +1,5 @@
+git branch                   # Se hvilken branch du er på 
+
 git checkout min-branch      # Bytter til din eksisterende feature-branch
 
 git fetch origin             # Henter siste oppdateringer fra remote (f.eks. GitHub) uten å endre din lokale branch

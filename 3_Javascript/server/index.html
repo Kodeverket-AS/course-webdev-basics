@@ -182,24 +182,24 @@
         </div>
       </div>
 
-      <form action="">
+      <form id="submit-form" action="submit">
         <div class="form-left">
-          <label for="text">First Name</label>
-          <input type="text" placeholder="Your Name.." />
+
+          <label for="first-name">First Name</label>
+          <input type="text" name="first-name" placeholder="Your Name.." />
 
           <label for="email">Email</label>
-          <input type="email" placeholder="E-mail.." />
+          <input type="email" name="email" placeholder="E-mail.." />
         </div>
 
         <div class="form-right">
-          <label for="input">Message</label>
+          <label for="message">Message:</label>
           <textarea
-            type="input"
-            name=""
-            id=""
+          type="text"
+          name="message"
             placeholder="Message.."
           ></textarea>
-          <button>Send</button>
+          <button id="btn">Send</button>
         </div>
       </form>
     </main>

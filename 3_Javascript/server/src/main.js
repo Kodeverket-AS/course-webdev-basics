@@ -43,7 +43,7 @@ baa(num, bigI, str, x, y, a, j, k, d, person);
 // Oppgave 3
 
 const start = 1;
-const lengthX = 100;
+const lengthX = 99;
 
 const myAr = Array.from({length: lengthX}, (_, i) => start + i)
 
@@ -65,6 +65,36 @@ function myN(n){
         return string;
     }
   }
+  return "Prime"
 }
 
-console.log(myN(6))
+let re = myAr.map(myN)
+
+console.log(re);
+
+//! Oppgave 4
+
+const formElement = document.getElementById("submit-form");
+const btn = document.getElementById("btn");
+
+let myBtn = btn.disabled = false;
+
+formElement.addEventListener("submit", formLogger);
+
+function formLogger(e){
+e.preventDefault();
+
+const formData = new FormData(formElement);
+const fn = formData.get("first-name");
+const em = formData.get("email");
+
+console.log(fn);
+console.log(em);
+
+myBtn = btn.disabled = true;
+setTimeout(() => {myBtn = btn.disabled = false}, 3000)
+}
+
+
+
+

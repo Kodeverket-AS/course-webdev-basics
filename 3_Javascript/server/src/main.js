@@ -1,3 +1,5 @@
+
+
 // Oppgave 1
 // Data typer
 
@@ -73,6 +75,8 @@ let re = myAr.map(myN)
 console.log(re);
 
 //! Oppgave 4
+import {fetchData} from "./api.js";
+
 
 const formElement = document.getElementById("submit-form");
 const btn = document.getElementById("btn");

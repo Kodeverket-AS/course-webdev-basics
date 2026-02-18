@@ -101,18 +101,24 @@ setTimeout(() => {myBtn = btn.disabled = false}, 3000)
 //! Oppgave 5
 import {fetchData} from "./api.js";
 
-const newElement = document.createElement("img");
-newElement.src = fetchData;
+async function displayImg() {
+  const imgUrl = await fetchData();
 
+  if (imgUrl){
+    const newElement = document.createElement("img");
+    newElement.src = imgUrl;
 
-newElement.style.width = "75%";
-newElement.style.maxWidth = "332px";
-newElement.style.height ="auto";
-newElement.style.margin ="0";
-newElement.style.borderRadius = "2px";
+    newElement.style.width = "75%";
+    newElement.style.maxWidth = "332px";
+    newElement.style.height ="auto";
+    newElement.style.margin ="0";
+    newElement.style.borderRadius = "2px";
+    
+    const RIC = document.getElementById("ramdomImgContainer");
+    RIC.insertAdjacentElement("beforeend", newElement);
+  }
+}
 
-const RIC = document.getElementById("ramdomImgContainer");
-RIC.insertAdjacentElement("beforeend", newElement);
-
+displayImg()
 
 

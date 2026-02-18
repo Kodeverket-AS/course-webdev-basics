@@ -8,11 +8,13 @@ if (!res.ok){
 }
 
 const data = await res.json();
+return data.message;
 
 }
 
 catch(error){
     console.log("Error:", error)
+    return null;
 }
 }
     

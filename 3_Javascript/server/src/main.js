@@ -101,24 +101,36 @@ setTimeout(() => {myBtn = btn.disabled = false}, 3000)
 //! Oppgave 5
 import {fetchData} from "./api.js";
 
-async function displayImg() {
-  const imgUrl = await fetchData();
+async function ranImg() {
+  const data = await fetchData();
 
-  if (imgUrl){
-    const newElement = document.createElement("img");
-    newElement.src = imgUrl;
+  if (data){
+  const newImg = document.createElement("img");
+  newImg.src = data.message;
 
-    newElement.style.width = "75%";
-    newElement.style.maxWidth = "332px";
-    newElement.style.height ="auto";
-    newElement.style.margin ="0";
-    newElement.style.borderRadius = "2px";
-    
-    const RIC = document.getElementById("ramdomImgContainer");
-    RIC.insertAdjacentElement("beforeend", newElement);
+  newImg.style.width = "75%";
+  newImg.style.maxWidth = "332px";
+  newImg.style.height = "auto";
+  newImg.style.margin = "0";
+  newImg.style.borderRadius = "2px";
+
+  const parentDiv = document.getElementById("ramdomImgContainer");
+  parentDiv.insertAdjacentElement("beforeend", newImg);
+
+  } else {
+    const backUp = document.createElement("img");
+    backUp.src = "../public/vite.svg"
+
+    backUp.style.width = "75%";
+    backUp.style.maxWidth = "332px";
+    backUp.style.height = "auto";
+    backUp.style.margin = "0";
+    backUp.style.borderRadius = "2px";
+
+    const parentDiv = document.getElementById("ramdomImgContainer");
+    parentDiv.insertAdjacentElement("beforeend", backUp);
   }
 }
 
-displayImg()
-
+ranImg()
 

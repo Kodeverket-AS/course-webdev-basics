@@ -1,14 +1,19 @@
-async function fetchData(){
-const url = "https://dog.ceo/api/breeds/image/random";
+export async function fetchData(){
+try{
+ const res = await fetch("https://dog.ceo/api/breeds/image/random")
 
-    try {
-    const response = await fetch(url)
-    if (!response.ok){
-        throw new Error(`Response status: ${response.status}`);
-    }
-    const result = await response.json()
-    console.log(result);
-    } catch (error) {
-        console.error(error.message)
-    }
+if (!res.ok){
+    console.log("Could not fetch")
+    return null;
 }
+
+const data = await res.json();
+
+}
+
+catch(error){
+    console.log("Error:", error)
+}
+}
+    
+    

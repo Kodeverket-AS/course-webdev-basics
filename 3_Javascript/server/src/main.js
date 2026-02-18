@@ -38,8 +38,8 @@ const baa = (b, ...para) => {
     console.log(b, ...para)
 };
 
-foo(num, bigI, str, x, y, a, j, k, d, person);
-baa(num, bigI, str, x, y, a, j, k, d, person);
+// foo(num, bigI, str, x, y, a, j, k, d, person);
+// baa(num, bigI, str, x, y, a, j, k, d, person);
 
 
 // Oppgave 3
@@ -72,11 +72,9 @@ function myN(n){
 
 let re = myAr.map(myN)
 
-console.log(re);
+// console.log(re);
 
 //! Oppgave 4
-import {fetchData} from "./api.js";
-
 
 const formElement = document.getElementById("submit-form");
 const btn = document.getElementById("btn");
@@ -99,6 +97,22 @@ myBtn = btn.disabled = true;
 setTimeout(() => {myBtn = btn.disabled = false}, 3000)
 }
 
+
+//! Oppgave 5
+import {fetchData} from "./api.js";
+
+const newElement = document.createElement("img");
+newElement.src = fetchData;
+
+
+newElement.style.width = "75%";
+newElement.style.maxWidth = "332px";
+newElement.style.height ="auto";
+newElement.style.margin ="0";
+newElement.style.borderRadius = "2px";
+
+const RIC = document.getElementById("ramdomImgContainer");
+RIC.insertAdjacentElement("beforeend", newElement);
 
 
 

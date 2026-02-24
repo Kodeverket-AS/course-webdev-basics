@@ -134,3 +134,29 @@ async function ranImg() {
 
 ranImg()
 
+//! Geo location
+
+import {værApi} from "./værApi.js"
+
+async function getVær() {
+const url = await værApi();
+if (url){
+  vidget.src = url;
+  const vidget = document.createElement("iframe");
+  
+  vidget.style.width = "75%";
+  vidget.style.maxWidth = "332px";
+  vidget.style.height = "auto";
+  vidget.style.margin = "0";
+  vidget.style.borderRadius = "2px"
+
+  const parentVær = document.getElementById("ramdomImgContainer");
+  parentVær.insertAdjacentElement("beforeend", vidget)
+}
+
+if (d){
+
+}
+}
+
+// getVær();

@@ -33,7 +33,7 @@ function createArticleElement(getStorybyId) {
   const link = document.createElement("a")
 
   title.textContent = getStorybyId.title + " (" + getStorybyId.score + ")"
-  text.textContent = "text"
+  text.textContent = ""
   postedAt.textContent ="posted by " + getStorybyId.by + " at " + getStorybyId.time
   link.textContent = "Read more"
   link.href = getStorybyId.url

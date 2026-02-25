@@ -1,4 +1,6 @@
-// import {getNewsById} from "./NewsById"
+import {NewsById} from "./main.js"
+
+
 
 class CreateArticleElement extends HTMLElement{
     constructor(){

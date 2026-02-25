@@ -48,13 +48,26 @@ function createArticleElement(getStorybyId) {
   return article
 }
 
-function getNews() {
-    const newsids = getNewest();              
-    newsids.then((newestStories) => {
-        const latest10 = newestStories.slice(0, 10);
+async function getNews() {
+    const newestStories = await getNewest(); 
+    const latest10 = newestStories.slice(0, 10);
 
-        for (let i = 0; i < latest10.length; i++) {
-            news.push(getStoryById(latest10[i]));
-        }
-    });                                      
+    for (let i = 0; i < latest10.length; i++) {
+      newNews=await getStorybyId(latest10[i]);
+      news.push(newNews);
+      }
+    
+    return news;
+  };
+                                        
+
+
+async function updateNews() {
+    const newsContainer = document.getElementById("news");
+    newsContainer.innerHTML = "";
+    const newsItems = await getNews();
+    newsItems.forEach(item => {
+        const articleElement = createArticleElement(item);
+        newsContainer.appendChild(articleElement);
+    });
 }

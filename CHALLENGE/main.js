@@ -47,3 +47,14 @@ function createArticleElement(getStorybyId) {
 
   return article
 }
+
+function getNews() {
+    const newsids = getNewest();              
+    newsids.then((newestStories) => {
+        const latest10 = newestStories.slice(0, 10);
+
+        for (let i = 0; i < latest10.length; i++) {
+            news.push(getStoryById(latest10[i]));
+        }
+    });                                      
+}

@@ -1,10 +1,11 @@
-import {NewsById} from "./main.js"
+import {Newest} from "./main.js"
+import {getNewsById} from "./main.js"
 
 class CreateArticleElement extends HTMLElement{
-
     constructor(){
         super();
         this.attachShadow({mode: "open"});
+        const d = Newest();
 
         // Statisk innhold
         const wrapper = document.createElement("section");
@@ -12,7 +13,8 @@ class CreateArticleElement extends HTMLElement{
 
         const title = document.createElement("h3");
         title.className= "news-title";
-        title.textContent = "Laster..." // Placeholder
+        title.textContent = d.title;
+        
 
         const para = document.createElement("p");
         para.className = "para";
@@ -25,7 +27,7 @@ class CreateArticleElement extends HTMLElement{
         padding: 5px;
         margin: 10px 0px;
         border-radius: var(--br);
-        background:var(--fg);
+        background:var(--bg);
         }
 
         .news-title{
@@ -43,19 +45,26 @@ class CreateArticleElement extends HTMLElement{
 
         this.shadowRoot.appendChild(style);
         this.shadowRoot.appendChild(wrapper);
+        this.shadowRoot.querySelector(".news-title").textContent = d.title;
     };
 
-    async Conntent(){
-    const data = await NewsById();
-    if(!data) return;
 
-       this.shadowRoot.querySelector(".news-title").textContent = data.title;
-       this.shadowRoot.querySelector(".para").textContent = data.url;
+    async function loadLatestArticles() {
+        const ids = await Newest();
+
+        const top10 = ids.slice(0, 10);
+
+  for (const id of top10) {
+    const article = await getNewsById(id); // ← din getNewsById()
+    if (article) {
+      const articleEl = CreateArticleElement(article);
+      document.getElementById("articles-container").appendChild(articleEl);
     }
-}
+  }
+};
+loadLatestArticles() 
 
-
-customElements.define("article-comp", CreateArticleElement)
+// customElements.define("article-comp", CreateArticleElement)
 
 
 // bruk = ArticleElement()

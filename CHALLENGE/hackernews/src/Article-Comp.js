@@ -4,20 +4,20 @@ class CreateArticleElement extends HTMLElement{
 
     constructor(){
         super();
-        const shadow = this.attachShadow({mode: "open"});
+        this.attachShadow({mode: "open"});
 
         // Statisk innhold
         const wrapper = document.createElement("section");
-        wrapper.setAttribute("class", "wrapper");
+        wrapper.className = "wrapper";
 
         const title = document.createElement("h3");
-        title.setAttribute("class", "news-title");
+        title.className= "news-title";
         title.textContent = "Laster..." // Placeholder
 
         const para = document.createElement("p");
-        para.setAttribute("class", "para");
-        this.parentElement.textContent = "Content on its way";
-        
+        para.className = "para";
+    
+            
         const style = document.createElement("style");
         style.textContent = `
         .wrapper{
@@ -40,32 +40,20 @@ class CreateArticleElement extends HTMLElement{
         `
         wrapper.appendChild(title);
         wrapper.appendChild(para); 
+
         this.shadowRoot.appendChild(style);
         this.shadowRoot.appendChild(wrapper);
     };
 
     async Conntent(){
-        try{
-            const id = this.getAttribute("news-id")
-            const data = await NewsById(id);
-            if(!data) {
-                console.log("No data at article comp")
-                return null;
-            };
+    const data = await NewsById();
+    if(!data) return;
 
-            // oppdater kun deler som er dynamisk
-            const title = this.shadowRoot.querySelector(".news-title");
-            title.textContent = data.title;
-
-            const para = this.getAttribute("para");
-            para.textContent = data.p;
-
-        }catch (err){
-            console.log("catch error")
-        }
+       this.shadowRoot.querySelector(".news-title").textContent = data.title;
+       this.shadowRoot.querySelector(".para").textContent = data.url;
     }
-
 }
+
 
 customElements.define("article-comp", CreateArticleElement)
 

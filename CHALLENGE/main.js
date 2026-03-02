@@ -99,7 +99,7 @@ function handleSearch(e) {
 
 initializeNews();
 
-document.getElementById("search-form").addEventListener("submit", (e) => {
+document.getElementById("search-form").addEventListener("submit", function(e)  {
     e.preventDefault();
 });
 

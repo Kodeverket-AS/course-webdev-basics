@@ -14,17 +14,23 @@
 
 
 
-export async function Newest(){
+// main.js 
+// Dette laget skl\al ta seg av HTTP kommunikasjon med server. (Fetch kall og return json)
+
+export async function getNewest(){
     
 try {
     // Fetch response from api
 const response = await fetch("https://hacker-news.firebaseio.com/v0/newstories.json");
 if(!response.ok){
-    throw new Error(`Failed to fetch story with ID: ${response.status}`)
+    console.log(`Failed to fetch story with ID: ${response.status}`)
+    return;
 }
 
 const ids = await response.json()
+
 if(!Array.isArray(ids) || ids.length === 0) throw new Error("No stories found");
+
 return ids;
     
 } catch (error){
@@ -39,13 +45,19 @@ export async function getNewsById(id) {
     try{
         const articleId = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`);
     if(!articleId.ok){
-        throw new Error(`Failed to fetch storry: ${articleId.status}`)
+        console.log(`Failed to fetch storry: ${articleId.status}`)
+        return;
     }
-    const article = await response.json();
+
+    const article = await articleId.json();
+    
     if(!article.ok){
-        throw new Error(`Failed to fetch`)
+        console.log(`Failed to fetch article: ${article.status}`)
+        return;
     }
+
     return article;
+
     } catch (error){
         console.error(`getNewsById(${id}) feilet:`, error);
     return null; 

@@ -1,25 +1,52 @@
-import {Newest} from "./main.js"
-import {getNewsById} from "./main.js"
 
+
+import { getNewest, getNewsById } from "./api";
+
+async function latestArticle(){
+const data = await getNewest();
+if(!data.ok) {
+  console.log(`Error: ${data.status}`);
+  return;
+}
+
+const top10 = data.slice(0, 10);
+
+for (const id of top10){
+  const article = await getNewsById(id)
+}
+if (article){
+  document.getElementsById("create-article")
+  articleElement.data = article;
+  document.appendChild(articleElement)
+}
+}
+latestArticle();
+
+
+
+
+// Dette laget skal kun ta seg av å Rendre data (UI-lag). 
+//! Det visuelle laget.
 class CreateArticleElement extends HTMLElement{
     constructor(){
         super();
+        // Oppretter Shadow DOM (isolert DOM-tre)
         this.attachShadow({mode: "open"});
-        const d = Newest();
 
         // Statisk innhold
-        const wrapper = document.createElement("section");
-        wrapper.className = "wrapper";
+        // Husk! - i en web component 
+        // this.* = permanent intern struktur. = en del av objektets indre tilstand
+        // const = midlertidig hjelpevariabel = en lokal variabel som forsvinner etterpå
+       
+        this.wrapper = document.createElement("section");
+        this.wrapper.className = "wrapper";
 
-        const title = document.createElement("h3");
-        title.className= "news-title";
-        title.textContent = d.title;
-        
+        this.title = document.createElement("h3");
+        this.title.className= "news-title";
 
-        const para = document.createElement("p");
-        para.className = "para";
+        this.para = document.createElement("p");
+        this.para.className = "para";
     
-            
         const style = document.createElement("style");
         style.textContent = `
         .wrapper{
@@ -40,34 +67,28 @@ class CreateArticleElement extends HTMLElement{
         color: var(--text);
         }
         `
-        wrapper.appendChild(title);
-        wrapper.appendChild(para); 
+        // Setter sammen 
+        this.wrapper.appendChild(this.title);
+        this.wrapper.appendChild(this.para); 
 
         this.shadowRoot.appendChild(style);
-        this.shadowRoot.appendChild(wrapper);
-        this.shadowRoot.querySelector(".news-title").textContent = d.title;
+        this.shadowRoot.appendChild(this.wrapper);
     };
+    
+        // Setter metode for å ta mot data utenfra
+        set data(article){
+          this.render(article)
+        }
 
-
-    async function loadLatestArticles() {
-        const ids = await Newest();
-
-        const top10 = ids.slice(0, 10);
-
-  for (const id of top10) {
-    const article = await getNewsById(id); // ← din getNewsById()
-    if (article) {
-      const articleEl = CreateArticleElement(article);
-      document.getElementById("articles-container").appendChild(articleEl);
-    }
-  }
+        // Render data inn i DOM
+        render(article){
+          this.title.textContent = article.title;
+          this.para.textContent = article.text;
+        }
 };
-loadLatestArticles() 
 
-// customElements.define("article-comp", CreateArticleElement)
+customElements.define("create-article", CreateArticleElement);
 
-
-// bruk = ArticleElement()
 
 // -Web Components- https://www.youtube.com/watch?v=2I7uX8m0Ta0
 

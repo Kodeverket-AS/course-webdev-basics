@@ -24,7 +24,7 @@ try {
 const response = await fetch("https://hacker-news.firebaseio.com/v0/newstories.json");
 if(!response.ok){
     console.log(`Failed to fetch story with ID: ${response.status}`)
-    return;
+    return null;
 }
 
 const ids = await response.json()
@@ -51,7 +51,7 @@ export async function getNewsById(id) {
 
     const article = await articleId.json();
     
-    if(!article.ok){
+    if(!article){
         console.log(`Failed to fetch article: ${article.status}`)
         return;
     }

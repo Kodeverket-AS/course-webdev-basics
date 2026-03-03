@@ -22,3 +22,87 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+
+import { getNewest, getNewsById } from "./api";
+
+// Dette laget skal kun ta seg av å Rendre data (UI-lag). 
+//! Det visuelle laget.
+class CreateArticleElement extends HTMLElement{
+    constructor(){
+        super();
+        // Oppretter Shadow DOM (isolert DOM-tre)
+        this.attachShadow({mode: "open"});
+
+        // Statisk innhold
+        // Husk! - i en web component 
+        // this.* = permanent intern struktur. = en del av objektets indre tilstand
+        // const = midlertidig hjelpevariabel = en lokal variabel som forsvinner etterpå
+       
+        // Title - [x]
+        this.title = document.createElement("h3");
+        this.title.className= "news-title";
+
+        // Id - [x]
+        this.wrapper = document.createElement("section");
+        this.wrapper.className = "wrapper";
+        this.wrapper.key = this.data.id;
+   
+        // Url - [x]
+        this.link = document.createElement("a");
+        this.link.classNAme = "news-link"
+        this.link.href = this.data.url;
+
+        // Time - [x]
+        this.time = document.createElement("p");
+        this.time.className = "time-p";
+
+        // By - [x]
+        this.by = document.createElement("p");
+        this.by.className ="created-by"
+    
+        const style = document.createElement("style");
+        style.textContent = `
+        .wrapper{
+        border:solid 1px var(--news-border);
+        padding: 5px;
+        margin: 10px 0px;
+        border-radius: var(--br);
+        background:var(--bg);
+        }
+
+        .news-title{
+        font-size: 1.2rem;
+        color: var(--text);
+        }
+
+        .para{
+        font-size: 1rem;
+        color: var(--text);
+        }
+        `
+        // Setter sammen 
+        this.wrapper.appendChild(this.title);
+        this.wrapper.appendChild(this.para); 
+
+        this.shadowRoot.appendChild(style);
+        this.shadowRoot.appendChild(this.wrapper);
+    };
+    
+
+};
+
+customElements.define("create-article", CreateArticleElement);
+
+
+//! DATA + RENDERING
+
+
+async function latestArticle() {
+const data = getNewsById(1);
+console.log(data)
+}
+
+  latestArticle();
+  

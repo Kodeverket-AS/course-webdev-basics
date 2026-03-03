@@ -1,6 +1,12 @@
 
-
 import { getNewest, getNewsById } from "./api";
+
+//! Hent Data og legg til comp
+async function renderData() {
+  
+}
+
+
 
 // Dette laget skal kun ta seg av å Rendre data (UI-lag). 
 //! Det visuelle laget.
@@ -10,20 +16,38 @@ class CreateArticleElement extends HTMLElement{
         // Oppretter Shadow DOM (isolert DOM-tre)
         this.attachShadow({mode: "open"});
 
-        // Statisk innhold
-        // Husk! - i en web component 
-        // this.* = permanent intern struktur. = en del av objektets indre tilstand
-        // const = midlertidig hjelpevariabel = en lokal variabel som forsvinner etterpå
-       
-        this.wrapper = document.createElement("section");
-        this.wrapper.className = "wrapper";
 
-        this.title = document.createElement("h3");
-        this.title.className= "news-title";
+        const d = getNewsById(1);
+        console.log(d);
 
-        this.para = document.createElement("p");
-        this.para.className = "para";
-    
+       this.innerHTML = `
+      <style>
+      .article-cont{
+      display:flex;
+      flex-direction:column;
+      }
+
+      .top{}
+
+      .bottom{}
+
+
+      </style>
+
+      <section className="article-cont">
+
+      <div className="top">
+       <p id="id">${}</p>
+       <a href="${}" id="title">${}</a>
+      </div>
+
+      <div className="bottom">
+        <p id="score">${}</p>
+        <p id="by">${}</p>
+        <p id="time">${}</p>
+      </div>
+      </section>
+       ` 
         const style = document.createElement("style");
         style.textContent = `
         .wrapper{
@@ -45,58 +69,17 @@ class CreateArticleElement extends HTMLElement{
         }
         `
         // Setter sammen 
-        this.wrapper.appendChild(this.title);
-        this.wrapper.appendChild(this.para); 
-
-        this.shadowRoot.appendChild(style);
-        this.shadowRoot.appendChild(this.wrapper);
+       
     };
     
-    set data(article) {
-      this.title.textContent = article.title || "No title";
-      this.para.textContent = article.text || "No content";
-    }
+
 };
 
 customElements.define("create-article", CreateArticleElement);
 
 
-//! DATA + RENDERING
+//! RENDERING
 
-
-async function latestArticle() {
-
-  const container = document.getElementById("articles");
-  if (!container) {
-    console.error("Container #articles not found");
-    return;
-  }
-
-  const ids = await getNewest();
-
-  if (!ids || ids.length === 0) {
-    console.log("No stories found");
-    return;
-  }
-
-  const top10 = ids.slice(0, 10);
-
-  // 🔥 Henter parallelt (mye raskere)
-  const articles = await Promise.all(
-    top10.map(id => getNewsById(id))
-  );
-
-  articles
-    .filter(article => article) // fjern null
-    .forEach(article => {
-      const element = document.createElement("create-article");
-      element.data = article;
-      container.appendChild(element);
-    });
-}
-
-  latestArticle();
-  
 
 
 // -Web Components- https://www.youtube.com/watch?v=2I7uX8m0Ta0

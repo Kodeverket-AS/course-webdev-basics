@@ -1,23 +1,26 @@
-
 import { getNewest, getNewsById } from "./api";
-
 
 class CreateArticleElement extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode: "open"});
+        
     };
 
+    
     async connectedCallback(){
-      await this.renderData()
+      await this.renderData();
+      this.setUpSearch();
     }
 
     async renderData(){
       const ids = await getNewest();
       const top10 = ids.slice(0, 10);
       const articles = await Promise.all(top10.map(id => getNewsById(id)))
-      
-      
+      this.articles = articles;
+      this.renderArticles(articles);
+    }
+    renderArticles(articles){
         this.shadowRoot.innerHTML = `
         ${articles.map((article, index) => 
           `
@@ -51,7 +54,7 @@ class CreateArticleElement extends HTMLElement{
         .top{
            display: flex;
            flex-direction: row;
-           justify-items: start;
+           justify-content: flex-start;
            align-items: center; 
            gap: 1rem;
         }
@@ -59,7 +62,7 @@ class CreateArticleElement extends HTMLElement{
         .bottom{ 
           display: flex;
           flex-direction: row;
-          justify-items: start;
+          justify-content: flex-start;
           align-items: center; 
           
          }
@@ -102,12 +105,26 @@ class CreateArticleElement extends HTMLElement{
         }
         </style>
         ` 
-    }
+      }
     
+    setUpSearch(){
+      const input = document.getElementById("site-search");
+
+      input.addEventListener("input", (e) =>{
+        const filter = e.target.value.toLowerCase();
+
+        const filtered = this.articles.filter(article => article.title.toLowerCase().includes(filter))    // trur ikke det ska være "this." forran articles 
+        this.renderArticles(filtered);
+      })
+    }
   };
   
 
 customElements.define("create-article", CreateArticleElement);
+
+
+
+
 
 
 
